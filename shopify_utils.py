@@ -14,10 +14,12 @@ def fetch_mandatory_env_var(key):
 
 API_KEY = fetch_mandatory_env_var('API_KEY')
 PASSWORD = fetch_mandatory_env_var('PASSWORD')
+ACCESS_TOKEN = fetch_mandatory_env_var('ACCESS_TOKEN')
 SHOP_NAME = fetch_mandatory_env_var('SHOP_NAME')
 API_VERSION = fetch_mandatory_env_var('API_VERSION')
 
 shop_url = F"https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin/api/{API_VERSION}"
+#shop_url = F"https://{ACCESS_TOKEN}@{SHOP_NAME}.myshopify.com/admin/api/{API_VERSION}"
 shopify.ShopifyResource.set_site(shop_url)
 
 
@@ -48,7 +50,8 @@ def get_all_resources(target_class):
     results += page
 
     while page.has_next_page():
-        page = target_class.find(from_=page.next_url)
+        #page = target_class.find(from_=page.next_page())
+        page = page.next_page()
         results += page
 
     return results

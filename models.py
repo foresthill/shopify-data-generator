@@ -83,6 +83,8 @@ class Customer:
     updated_at: str
     verified_email: bool
     admin_graphql_api_id: str
+    email_marketing_consent: bool # added after 2022-04(api ver.)
+    sms_marketing_consent: bool
     marketing_opt_in_level: Optional[str] = None  # can be single_opt_in, confirmed_opt_in, unknown
     multipass_identifier: Optional[str] = None
     note: Optional[str] = None

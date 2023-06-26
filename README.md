@@ -1,6 +1,21 @@
 # Shopify Orders Generator
 
-> A script to generate simulated orders in your Shopify store.
+> A script to generate simulated orders in your Shopify store.(apply for 2022-04)
+
+## apply for api version 2022-04
+
+- New email marketing consent for customers and deprecated fields API  
+https://shopify.dev/changelog/new-email-marketing-consent-for-customers-and-deprecated-fields  
+
+
+## apply for ACCESS_TOKEN（結局あんま意味ない）
+
+- When To Use Access Token And When Api Key  
+https://community.shopify.com/c/graphql-basics-and/when-to-use-access-token-and-when-api-key/td-p/1638571
+
+  
+* PASSWORDのところにアクセストークンを入れれば動くので結局あまり意味がなかった…。
+
 
 ## One-time set up
 
@@ -9,6 +24,7 @@
 ```
 API_KEY=''
 PASSWORD=''
+ACCESS_TOKEN=''
 SHOP_NAME='my-awesome-store-for-dev'
 API_VERSION='2020-07'
 ```
