@@ -14,7 +14,7 @@ https://shopify.dev/changelog/new-email-marketing-consent-for-customers-and-depr
 https://community.shopify.com/c/graphql-basics-and/when-to-use-access-token-and-when-api-key/td-p/1638571
 
   
-* PASSWORDのところにアクセストークンを入れれば動くので結局あまり意味がなかった…。
+* It worked if We put the access token in the PASSWORD section, so it didn't make much sense in the end.（PASSWORDのところにアクセストークンを入れれば動くので結局あまり意味がなかった…。）
 
 
 ## One-time set up
