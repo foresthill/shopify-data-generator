@@ -1,7 +1,8 @@
 import argparse
 import random
 import time
-
+import pdb #デバッグ（まずpdbをインポート）https://www.sejuku.net/blog/62791
+ 
 from datetime import datetime, timedelta
 from factories import CustomerFactory, OrderCreateFactory, get_random_number_with_dist
 from models import OrderLineItemCreate, Customer, Address
@@ -31,14 +32,19 @@ dashboard of your shopify store.
         try:
             line_items = []
 
+            pdb.set_trace() #ここでset_trace() デバッグ開始
+
             for _ in range(get_random_number_with_dist(4, [0.5, 0.25, 0.15, 0.1])):
                 random_product = random.choice(products)
                 random_variant = random.choice(random_product.variants)
+
                 line_item = OrderLineItemCreate(
-                    title=random_variant.title,
-                    variant_id=random_variant.id,
+                    title=random_product.title,
+                    variant_id=random_product.id,
                     quantity=get_random_number_with_dist(4, [0.5, 0.25, 0.15, 0.1]),
-                    price=float(random_variant.price)
+                    price=float(random_variant.price),
+                    product_id=random_variant.id
+                    #price=random_product.price
                 )
                 line_items.append(line_item)
 

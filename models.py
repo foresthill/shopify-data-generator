@@ -121,10 +121,11 @@ class Customer:
 @dataclass
 class OrderLineItemCreate:
     title: str
-    # product_id: int
+    product_id: int
     variant_id: int
     quantity: int
     price: float
+    #price: int
     taxable: bool = True
 
 

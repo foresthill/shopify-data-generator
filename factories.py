@@ -126,7 +126,7 @@ class OrderCreateFactory(Factory):
     class Meta:
         model = OrderCreate
 
-    currency = "USD"
+    currency = "JPY"
     line_items = LazyAttribute(lambda o: [OrderLineItemFactory()])
     fulfillment_status = 'fulfilled'
     tax_lines = LazyAttribute(lambda o: [
