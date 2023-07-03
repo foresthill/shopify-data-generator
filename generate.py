@@ -32,8 +32,7 @@ dashboard of your shopify store.
         try:
             line_items = []
 
-            pdb.set_trace() #ここでset_trace() デバッグ開始
-
+            # pdb.set_trace() #ここでset_trace() デバッグ開始
             for _ in range(get_random_number_with_dist(4, [0.5, 0.25, 0.15, 0.1])):
                 random_product = random.choice(products)
                 random_variant = random.choice(random_product.variants)
@@ -61,7 +60,7 @@ dashboard of your shopify store.
                 random_customer = Customer(**random_customer.to_dict())
 
             random_date = start + (end - start) * random.random()
-            fulfillment_status = "fulfilled"
+            fulfillment_status = "unfulfilled"
             financial_status = "paid"
 
             if random.random() > 0.9:
@@ -77,6 +76,7 @@ dashboard of your shopify store.
                 customer=random_customer,
                 line_items=line_items,
                 processed_at=random_date.isoformat(),
+                note='Testノートテスト', note_attributes=[{"name": "出荷指示", "value": "出荷指示テスト"}],
                 tags='first-run', fulfillment_status=fulfillment_status, financial_status=financial_status)
 
             upstream_order = publish(random_order, shopify.Order)

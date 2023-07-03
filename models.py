@@ -146,12 +146,23 @@ class OrderCreate:
     transactions: List[dict]  # Added extra for create api
     total_tax: float
     processed_at: str
+    note: str
+    note_attributes: List[dict]
     tags: str
 
     def get_create_object(self):
         data = self.Schema().dump(self)
         return data
 
+@dataclass
+class Attribute:
+    key: str
+    value: str
+
+@dataclass
+class NoteAttribute:
+    name: str
+    value: str
 
 """
 @dataclass
